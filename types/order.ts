@@ -8,7 +8,7 @@ export interface Order {
   requiredDate: string;
   shippedDate: string;
   shipVia: number;
-  freight: number;
+  freight: string;
   shipName: string;
   shipAddress: string;
   shipCity: string;

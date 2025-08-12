@@ -1,17 +1,19 @@
 'use client';
 
 import React, { useState } from 'react';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { Box } from '@mui/material';
 import { DataTable, DataTablePageEvent } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
 import { useOrdersPaginated } from '@/hooks/useOrder';
 import { formatDateFromString } from '@/utils/formatDateFromString';
-import { Order } from '@/types/order';
-import Link from 'next/link';
 import { Breadcrumbs } from '@/components/organisms';
+import { Order } from '@/types/order';
 
 const OrdersPage = () => {
+  const t = useTranslations('pages.orders');
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
 
@@ -54,7 +56,7 @@ const OrdersPage = () => {
 
   return (
     <>
-      <Breadcrumbs pageTitle="Orders list" />
+      <Breadcrumbs pageTitle={t('pageTitle')} />
       <Box>
         <DataTable
           value={ordersPaginated?.data}
@@ -62,21 +64,40 @@ const OrdersPage = () => {
           paginator
           first={(page - 1) * pageSize}
           rows={pageSize}
-          totalRecords={ordersPaginated?.metadata.totalCount}
           onPage={handlePage}
           loading={loadingOrdersPaginated}
         >
-          <Column field="orderId" header="ID" body={orderIdBodyTemplate} />
-          <Column field="customerId" header="Customer" body={customerBodyTemplate} />
-          <Column field="employeeId" header="Employee" body={employeeBodyTemplate} />
-          <Column field="orderDate" header="Order Date" body={orderDateBodyTemplate} />
-          <Column field="requiredDate" header="Required Date" body={requiredDateBodyTemplate} />
-          <Column field="shippedDate" header="Shipped Date" body={shippedDateBodyTemplate} />
-          <Column field="shipVia" header="Ship Vía" />
-          <Column field="freight" header="Freight" />
-          <Column field="shipName" header="Ship Name" />
-          <Column field="shipCountry" header="Country" />
-          <Column field="shipCity" header="City" />
+          <Column field="orderId" header={t('table.columns.orderId')} body={orderIdBodyTemplate} />
+          <Column
+            field="customerId"
+            header={t('table.columns.customer')}
+            body={customerBodyTemplate}
+          />
+          <Column
+            field="employeeId"
+            header={t('table.columns.employee')}
+            body={employeeBodyTemplate}
+          />
+          <Column
+            field="orderDate"
+            header={t('table.columns.orderDate')}
+            body={orderDateBodyTemplate}
+          />
+          <Column
+            field="requiredDate"
+            header={t('table.columns.requiredDate')}
+            body={requiredDateBodyTemplate}
+          />
+          <Column
+            field="shippedDate"
+            header={t('table.columns.shippedDate')}
+            body={shippedDateBodyTemplate}
+          />
+          <Column field="shipVia" header={t('table.columns.shipVia')} />
+          <Column field="freight" header={t('table.columns.freight')} />
+          <Column field="shipName" header={t('table.columns.shipName')} />
+          <Column field="shipCountry" header={t('table.columns.country')} />
+          <Column field="shipCity" header={t('table.columns.city')} />
         </DataTable>
       </Box>
     </>

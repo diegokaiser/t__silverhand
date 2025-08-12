@@ -1,10 +1,15 @@
 {
+  "metadata": {
+    "title": "silverhand",
+    "description": "created by Trascendiendo"
+  },
   "menu": {
     "dashboard": "Dashboard",
     "myTasks": "Mis tareas",
     "tasksList": "Lista de tareas",
     "addTask": "Agregar tarea",
     "services": "Servicios",
+    "servicesResume": "Resumen",
     "addServices": "Registrar servicio",
     "orders": "Órdenes",
     "ordersList": "Lista de órdenes",
@@ -28,5 +33,33 @@
     "settings": "Ajustes",
     "settingsCompanyDetails": "Detalles de empresa",
     "settingsAddCompanyDetails": "Agregar detalles de empreesa"
+  },
+  "pages": {
+    "dashboard": {
+      "charts": {
+        "monthlyOrders": "Órdenes mensuales",
+        "quaterlyOrders": "Órdenes trimestrales",
+        "biannualOrders": "Órdenes semestrales",
+        "annualyOrders": "Órdenes anuales"
+      }
+    },
+    "orders": {
+      "pageTitle": "Lista de órdenes",
+      "table": {
+        "columns": {
+          "orderId": "ID",
+          "customer": "Cliente",
+          "employee": "Empleado",
+          "orderDate": "Fec. Orden",
+          "requiredDate": "Req. Orden",
+          "shippedDate": "Fec. Envío",
+          "shipVia": "Via Envío",
+          "freight": "Peso",
+          "shipName": "Nombre Envío",
+          "country": "País",
+          "city": "Ciudad"
+        }
+      }
+    }
   }
 }

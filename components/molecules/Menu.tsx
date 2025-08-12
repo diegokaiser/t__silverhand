@@ -1,6 +1,8 @@
+'use client';
+
 import { Fragment, useEffect, useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import { Box, Collapse, List, Typography } from '@mui/material';
 import * as Icons from 'iconsax-reactjs';
 import type { SidebarItem, SidebarSection } from '@/types/menu';
@@ -16,6 +18,7 @@ const startsWithPath = (baseUrl: string | undefined, path: string) => {
 };
 
 const Menu = () => {
+  const t = useTranslations();
   const [menu, setMenu] = useState<SidebarSection[]>([]);
   const [openIndexes, setOpenIndexes] = useState<Record<string, boolean>>({});
 
@@ -59,7 +62,7 @@ const Menu = () => {
         const key = `${parentKey}-${index}`;
 
         const isChildActive =
-          startsWithPath((child as any).ur, pathname) ||
+          startsWithPath((child as any).url, pathname) ||
           (child.children || []).some((g) => startsWithPath(g.url, pathname));
 
         const baseColor = isChildActive ? mainColor : textColor;
@@ -97,7 +100,7 @@ const Menu = () => {
               )}
               <Box sx={{ flex: '1 1 auto', minWidth: 0, mt: '4px', mb: '4px' }}>
                 <Typography variant="h6" sx={{ fontSize: '0.875rem', color: baseColor }}>
-                  {child.title}
+                  {t(child.title)}
                 </Typography>
               </Box>
               <Box
@@ -155,9 +158,9 @@ const Menu = () => {
 
                 return (
                   <Box key={`${key}-child-${subIndex}`}>
-                    <a
+                    <Link
                       target="_self"
-                      href={grandChild.url}
+                      href={grandChild.url as any}
                       style={{
                         alignItems: 'center',
                         backgroundColor: 'transparent',
@@ -197,10 +200,10 @@ const Menu = () => {
                       </Box>
                       <Box sx={{ flex: '1 1 auto', minWidth: 0 }}>
                         <Typography variant="h6" sx={{ fontSize: '0.875rem', color: itemColor }}>
-                          {grandChild.title}
+                          {t(grandChild.title)}
                         </Typography>
                       </Box>
-                    </a>
+                    </Link>
                   </Box>
                 );
               })}
@@ -214,9 +217,9 @@ const Menu = () => {
 
       return (
         <Box key={`${parentKey}-item-${index}`}>
-          <a
+          <Link
             target="_self"
-            href={child.url}
+            href={child.url as any}
             style={{
               alignItems: 'center',
               backgroundColor: 'transparent',
@@ -245,10 +248,10 @@ const Menu = () => {
             )}
             <Box sx={{ flex: '1 1 auto', mb: '4px', mt: '4px', minWidth: 0 }}>
               <Typography variant="h6" sx={{ fontSize: '0.875rem', color: topColor }}>
-                {child.title}
+                {t(child.title)}
               </Typography>
             </Box>
-          </a>
+          </Link>
         </Box>
       );
     });
@@ -264,7 +267,7 @@ const Menu = () => {
                 color={textColor}
                 sx={{ fontSize: '0.688rem', fontWeight: 'bold', textTransform: 'uppercase' }}
               >
-                {section.title}
+                {t(section.title)}
               </Typography>
             </Box>
             {renderChildren(section.children, `section-${index}`)}

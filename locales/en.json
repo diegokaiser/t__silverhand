@@ -1,11 +1,15 @@
 {
+  "metadata": {
+    "title": "carolinasofiamaju22",
+    "description": "creado por Trascendiendo"
+  },
   "menu": {
     "dashboard": "Dashboard",
     "myTasks": "My tasks",
     "tasksList": "Tasks list",
     "addTask": "Add tasks",
     "services": "Services",
-    "servicesResume": "Resumen",
+    "servicesResume": "Overview",
     "addServices": "Register service",
     "orders": "Orders",
     "ordersList": "Orders list",
@@ -29,5 +33,33 @@
     "settings": "Settings",
     "settingsCompanyDetails": "Company details",
     "settingsAddCompanyDetails": "Add company details"
+  },
+  "pages": {
+    "dashboard": {
+      "charts": {
+        "monthlyOrders": "Orders by month",
+        "quaterlyOrders": "Quarterly orders",
+        "biannualOrders": "Biannual orders",
+        "annualyOrders": "Annualy orders"
+      }
+    },
+    "orders": {
+      "pageTitle": "Order list",
+      "table": {
+        "columns": {
+          "orderId": "ID",
+          "customer": "Customer",
+          "employee": "Employee",
+          "orderDate": "Order Date",
+          "requiredDate": "Required Date",
+          "shippedDate": "Shipped Date",
+          "shipVia": "Ship Via",
+          "freight": "Freight",
+          "shipName": "Ship Name",
+          "country": "Country",
+          "city": "City"
+        }
+      }
+    }
   }
 }
