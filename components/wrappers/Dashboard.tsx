@@ -2,58 +2,65 @@
 
 import { Fragment, ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
-import dynamic from 'next/dynamic';
-import { Box, Container } from '@mui/material';
-import { Header } from '../layout';
+import { PrimeReactProvider } from 'primereact/api';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Box } from '@mui/material';
+import { Footer, Header } from '@/components/layout';
+import Sidebar from '@/components/layout/Sidebar';
 
 const DashboardWrapper = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();
-  const SidebarHost = dynamic(() => import('../layout/SidebarHost'), { ssr: false });
+
+  const queryClient = new QueryClient();
 
   return (
-    <Fragment>
-      <Box></Box>
-      <Box sx={{ display: 'flex', width: '100%' }}>
-        <Header />
-        <SidebarHost />
-        <Box
-          component="main"
-          sx={{
-            flexGrow: 1,
-            p: { xs: 1, sm: 3 },
-            width: `calc(100% - 280px)`,
-          }}
-        >
-          <Box
-            sx={{
-              px: { xs: 1, sm: 3 },
-              position: 'relative',
-              display: 'flex',
-              alignItems: 'center',
-              minHeight: '74px',
-              py: 1,
-            }}
-          ></Box>
-          <Box
-            sx={{
-              px: { xs: 2, sm: 3 },
-              width: '100%',
-              ml: 'auto',
-              boxSizing: 'border-box',
-              mr: 'auto',
-              position: 'relative',
-              minHeight: 'calc(100vh - 124px)',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            {/** Breadcrumbs */}
-            {children}
-            {/** Footer */}
+    <PrimeReactProvider>
+      <QueryClientProvider client={queryClient}>
+        <Fragment>
+          <Box></Box>
+          <Box sx={{ display: 'flex', width: '100%' }}>
+            <Header />
+            <Sidebar />
+            <Box
+              component="main"
+              sx={{
+                flexGrow: 1,
+                p: { xs: 1, sm: 3 },
+                width: `calc(100% - 280px)`,
+              }}
+            >
+              <Box
+                sx={{
+                  px: { xs: 1, sm: 3 },
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  minHeight: '74px',
+                  py: 1,
+                }}
+              ></Box>
+              <Box
+                sx={{
+                  px: { xs: 2, sm: 3 },
+                  width: '100%',
+                  ml: 'auto',
+                  boxSizing: 'border-box',
+                  mr: 'auto',
+                  position: 'relative',
+                  minHeight: 'calc(100vh - 124px)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                {/** Breadcrumbs */}
+                {children}
+                <Footer />
+              </Box>
+            </Box>
           </Box>
-        </Box>
-      </Box>
-    </Fragment>
+        </Fragment>
+      </QueryClientProvider>
+    </PrimeReactProvider>
   );
 };
 

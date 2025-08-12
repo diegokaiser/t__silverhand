@@ -1,0 +1,107 @@
+.
+├── README.md
+├── STRUCTURE.txt
+├── api
+│   ├── customers.ts
+│   ├── employees.ts
+│   ├── index.ts
+│   ├── instance.ts
+│   └── orders.ts
+├── app
+│   ├── (auth)
+│   ├── (dashboard)
+│   │   ├── customers
+│   │   │   └── [id]
+│   │   │       └── page.tsx
+│   │   ├── dashboard
+│   │   │   └── page.tsx
+│   │   ├── employees
+│   │   │   └── [id]
+│   │   │       └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── orders
+│   │       ├── [id]
+│   │       │   └── page.tsx
+│   │       ├── add
+│   │       │   └── page.tsx
+│   │       └── page.tsx
+│   ├── [locale]
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components
+│   ├── atoms
+│   ├── layout
+│   │   ├── ChartHost.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   ├── Sidebar.tsx
+│   │   ├── SidebarHost.tsx
+│   │   └── index.tsx
+│   ├── molecules
+│   │   ├── Drawer.tsx
+│   │   ├── Menu.tsx
+│   │   ├── Navigation.tsx
+│   │   └── index.tsx
+│   ├── organisms
+│   │   ├── Breadcrumbs.tsx
+│   │   └── index.tsx
+│   ├── skeletons
+│   ├── templates
+│   │   └── index.tsx
+│   └── wrappers
+│       ├── Dashboard.tsx
+│       └── index.tsx
+├── custom-elements-d.ts
+├── eslint.config.mjs
+├── global.d.ts
+├── hoc
+├── hooks
+│   ├── useCustomer.ts
+│   ├── useDrawer.ts
+│   ├── useEmployee.ts
+│   └── useOrder.ts
+├── jest.config.ts
+├── jest.setup.ts
+├── lib
+│   ├── constants.ts
+│   └── i18n.ts
+├── locales
+│   ├── de.json
+│   ├── en.json
+│   └── es.json
+├── middleware.ts
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── providers
+│   └── DrawerProvider.tsx
+├── public
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── schema
+├── styles
+│   └── dashboard.css
+├── tailwind.config.js
+├── tsconfig.json
+├── types
+│   ├── customer.ts
+│   ├── employee.ts
+│   ├── menu.ts
+│   ├── metadata.ts
+│   ├── order.ts
+│   ├── product.ts
+│   ├── shipper.ts
+│   └── supplier.ts
+└── utils
+    └── formatDateFromString.ts
+
+32 directories, 73 files

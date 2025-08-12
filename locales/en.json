@@ -1,0 +1,33 @@
+{
+  "menu": {
+    "dashboard": "Dashboard",
+    "myTasks": "My tasks",
+    "tasksList": "Tasks list",
+    "addTask": "Add tasks",
+    "services": "Services",
+    "servicesResume": "Resumen",
+    "addServices": "Register service",
+    "orders": "Orders",
+    "ordersList": "Orders list",
+    "addOrder": "Add order",
+    "reports": "Reports",
+    "reportsList": "Report list",
+    "addReport": "Add report",
+    "alerts": "Alerts",
+    "alertsList": "Alerts list",
+    "addAlert": "Add alert",
+    "billing": "Billing",
+    "bills": "Bills",
+    "addBill": "Add bill",
+    "customers": "Customers",
+    "customersList": "Customer list",
+    "addCustomer": "Add customer",
+    "users": "Users",
+    "usersList": "Users list",
+    "adduser": "Add user",
+    "userOverview": "User overview",
+    "settings": "Settings",
+    "settingsCompanyDetails": "Company details",
+    "settingsAddCompanyDetails": "Add company details"
+  }
+}

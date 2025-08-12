@@ -1,0 +1,32 @@
+{
+  "menu": {
+    "dashboard": "Dashboard",
+    "myTasks": "Mis tareas",
+    "tasksList": "Lista de tareas",
+    "addTask": "Agregar tarea",
+    "services": "Servicios",
+    "addServices": "Registrar servicio",
+    "orders": "Órdenes",
+    "ordersList": "Lista de órdenes",
+    "addOrder": "Agregar orden",
+    "reports": "Reportes",
+    "reportsList": "Lista de reportes",
+    "addReport": "Agregar reporte",
+    "alerts": "Alertas",
+    "alertsList": "Lista de alertas",
+    "addAlert": "Agregar alerta",
+    "billing": "Facturación",
+    "bills": "Facturas",
+    "addBill": "Agregar factura",
+    "customers": "Cliente",
+    "customersList": "Lista de clientes",
+    "addCustomer": "Agregar cliente",
+    "users": "Usuarios",
+    "usersList": "Lista de usuarios",
+    "adduser": "Agregar usuario",
+    "userOverview": "Detalles de usuario",
+    "settings": "Ajustes",
+    "settingsCompanyDetails": "Detalles de empresa",
+    "settingsAddCompanyDetails": "Agregar detalles de empreesa"
+  }
+}

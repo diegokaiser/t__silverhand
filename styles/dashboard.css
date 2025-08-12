@@ -5,3 +5,17 @@ body {
   font-weight: 400;
   line-height: 1.57;
 }
+
+.p-datatable {
+  border: 1px solid;
+  border-color: rgba(219, 224, 229, 0.65);
+  border-radius: 12px;
+}
+
+.p-datatable .p-datatable-wrapper {
+  border-radius: 12px 12px 0 0;
+}
+
+.p-datatable .p-paginator-bottom {
+  border-radius: 0 0 12px 12px;
+}
